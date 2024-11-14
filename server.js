@@ -10,27 +10,8 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-
 app.use(express.json());
-
-// Initialize the database connection
-const db = new Database(process.env.DB_PATH || "database.sqlite");
-
-// Create the `products` table if it doesn't exist
-const createTableQuery = `
-  CREATE TABLE IF NOT EXISTS products (
-    productid INTEGER PRIMARY KEY AUTOINCREMENT,
-    adminid INTEGER NOT NULL DEFAULT 2,
-    title TEXT NOT NULL,
-    price REAL NOT NULL,
-    description TEXT NOT NULL,
-    category TEXT NOT NULL,
-    image TEXT NOT NULL,
-    stockavailable REAL NOT NULL
-  );
-`;
-db.exec(createTableQuery);
-
+const db = new Database("database.sqlite");
 app.get("/products", (req, res) => {
   try {
     const sql = "SELECT * FROM products";
