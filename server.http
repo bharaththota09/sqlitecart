@@ -1,0 +1,44 @@
+GET http://localhost:3000/
+
+###
+POST http://localhost:3000/orders 
+Content-Type:application/json
+
+{
+    "userId": 2,
+    "orderTime": "2024-11-15T12:53:39.251Z",
+    "cartList": [
+        {
+            "e": {
+                "adminid": 3,
+                "category": "Clothing",
+                "description": "Black solid opaque Party shirt ,has a spread collar, button placket, long regular sleeves, curved hem",
+                "image": "https://sp.yimg.com/ib/th?id=OPAC.XVa0lZo8dC1vvg474C474&o=5&pid=21.1&w=174&h=174",
+                "price": 10,
+                "productid": 15,
+                "stockavailable": 100,
+                "title": "Men Black Slim Fit Party Shirt"
+            },
+            "quantity": 1
+        },
+        {
+            "e": {
+                "adminid": 3,
+                "category": "Clothing",
+                "description": "Black solid opaque Party shirt ,has a spread collar, button placket, long regular sleeves, curved hem",
+                "image": "https://sp.yimg.com/ib/th?id=OPAC.XVa0lZo8dC1vvg474C474&o=5&pid=21.1&w=174&h=174",
+                "price": 100,
+                "productid": 15,
+                "stockavailable": 100,
+                "title": "Men Black Slim Fit Party Shirt"
+            },
+            "quantity": 4
+        }
+    ]
+}
+
+###
+GET http://localhost:3000/orders/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ…jc3fQ.8c4-naTa6FsWfItfEM5M14qXM1EmB6komNLwgiJlAeA
+###
+GET http://localhost:3000/savelater/1
