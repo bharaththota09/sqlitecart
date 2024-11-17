@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const MY_SECRET_KEY = "bharath@123";
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:4000"],
+    origin: ["http://localhost:5173", "http://localhost:4000","http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
